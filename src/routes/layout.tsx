@@ -6,6 +6,7 @@ import Header from '~/components/starter/header/header';
 import Footer from '~/components/starter/footer/footer';
 
 import styles from './styles.css?inline';
+import tailwind from '~/global.css?inline';
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -26,6 +27,8 @@ export const useServerTimeLoader = routeLoader$(() => {
 
 export default component$(() => {
   useStyles$(styles);
+  useStyles$(tailwind);
+
   return (
     <>
       <Header />
